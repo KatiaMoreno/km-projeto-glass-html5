@@ -1,5 +1,15 @@
-
+/*usando para ligunas que tem acentuacao*/
 @charset "UTF-8";
+
+/*Font-face- usado para colocar fontes que voce baixou e que esta em um outro arquivo*/
+@font-face{
+    font-family:'FontLogo' ;
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+/*importando uma fonte do googl;e fontes e colocando no <h2> header*/
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
 body{
     background-color:#dddddd;
     color:rgba(0,0,0,1);
@@ -10,11 +20,11 @@ div#interface{
     background-color: #ffffff;
 
     /*centralizando a <div>*/
-    margin: -20px auto 0px auto;
+    margin: -20px auto 0px auto; /* -20x pq mesmo se colocamos 0 ele nao ficaria encostado em cima, entao calculamos -20px que era o espaco que tinha*/
 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) ; /*fazer um sombreamento na div*/
 
-    padding: 10px; /*separa o text da borda*/ 
+    padding: 10px; /*para separar o text da borda*/ 
 }
 
 h3{
@@ -27,46 +37,53 @@ p{
    
 }
 
-header#header-menu img#icone-glass-header{
-    position: absolute;
-    left: 971px;
-    top: 70px;
-}
+/*HEADER********************************/
 
-header#header-menu{
-    height: 155px;
-    border-bottom: 1px dotted #606060 ; /*colocando uma linha para dividir o cabecario do texto pricipal*/
+    header#header-menu{
+        height: 155px;
+        border-bottom: 1px dotted #606060 ; /*colocando uma linha para dividir o cabecario do texto pricipal*/
 
-    /*imagem da logo marca do google glass*/
-    background-image: url('../_imagens/glass-logo-peq.jpg'); /*por ser um background nao vai ter a opcao de salvar imagem*/
-    background-repeat: no-repeat;
-    background-position: 0px 80px;
+        /*imagem da logo marca do google glass*/
+        background-image: url('../_imagens/glass-logo-peq.jpg'); /*por ser um background nao vai ter a opcao de salvar imagem*/
+        background-repeat: no-repeat;
+        background-position: 0px 80px;
 
-}
+    }
 
-header#header-menu h1{
-    color: #5e5e5e;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    padding: 0px;
-    margin-bottom: 0px;
-}
-
-header#header-menu h2{
-    color: #626262;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0px;
-    margin-top: 0px;
-   
-   
-}
+    /*aqui coloco a img do oculos absolut (ela vai flutuar e posiciono na parte de cima com uma distancia do lado esquerdo da tela*/
+    header#header-menu img#icone-glass-header{
+        position: absolute;
+        left: 971px;
+        top: 70px;
+    }
 
 
+    /*H1 e H2 -  Configurando os titulo*/
+    header#header-menu h1{
+        color: #5e5e5e;
+        font-size: 30px;
 
-/*********************************/
-/*MENU*/
+        /*esta fonte e uma fote que foi exportada e esta em uma pasta externa*/
+        font-family: 'FontLogo', Helvetica, sans-serif;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    header#header-menu h2{
+        color: #626262;
+        font-size: 15px;
+        padding: 0px;
+        margin-top: 0px;
+        font-family: 'Berkshire Swash', cursive;
+    
+    
+    }
+
+/*END HEADER**********************/
+
+
+/*MENU********************************/
 
     nav#menu h1{
         display: none;/*vai esconder porem vai ser util para sistemas SEO de pesquisa*/
@@ -113,11 +130,44 @@ header#header-menu h2{
         color: #ffffff;
         text-decoration: underline;
     }
+/*END MENU****************************/
+
+/*SECTION  ********************/
+
+    section#corpo{
+        display: block;
+        width: 575px;
+        float: left;
+        border-right: 1px solid black;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    aside#lateral{
+        display: block;
+        width: 364px;
+        float: right;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    footer#footer{
+        display: block;
+        clear: both;
+        border-top: 1px solid black;  
+
+    }
+
+    footer#footer p{
+        text-align: center;
+    }
 
 
+/*END SECTION****************************/
 
-/*********************************/
-/*Formatacao de imagens com legendas*/
+/*IMAGEM GRANDE  ********************/
+
+    /*Formatacao de imagens com legendas*/
 
     /*tudo que for do <figure> de class "foto-legenda" vai ter esse style abaixo (nome da <tag>.nome da class) */
     figure.foto-legenda{
@@ -159,26 +209,30 @@ header#header-menu h2{
             opacity: 1; /*opacity de 1 = 100%*/
         }
 
-/***************************************************/
+/*END-IMAGEM GRANDE *********************/
 
 
-table {
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    border:grey;
-}
-
-tbody td {
-    background-color: #E1E1E1;
-    text-align: right;
-}
-td, th {
-    padding: 1em;
-}
+/*TABLE**********************************/
 
 
-tfoot tr {
-    background-color: #333;
-    color: #fff;
-}
+    table {
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        border:grey;
+    }
 
+    tbody td {
+        background-color: #E1E1E1;
+        text-align: right;
+    }
+    td, th {
+        padding: 1em;
+    }
+
+
+    tfoot tr {
+        background-color: #333;
+        color: #fff;
+    }
+
+/*END TABLE*******************************/
