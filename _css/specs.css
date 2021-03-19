@@ -1,0 +1,42 @@
+ /*SECTION-start*/
+ section#corpo-specs{
+    display: block;
+    width: 95%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+header#header-artigo-specs h1{
+    font-family:'FontLogo', sans-serif;
+    font-size: 20pt;
+    color: red;
+    margin-bottom: 0px;
+    margin-top: 0px;
+
+}
+article#noticia-principal-specs header#header-artigo-specs h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: white;
+    margin: 0px;
+}
+
+header#header-artigo-specs h3{
+    font-size: 12px;
+    color: #606060;
+
+}
+
+.direita{
+    text-align: right;
+}
+
+/*fomatando todos os <h2> do article*/
+article#noticia-principal-specs h2{
+    font-size: 16px;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px ;
+}
