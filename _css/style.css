@@ -13,6 +13,7 @@
 body{
     background-color:#dddddd;
     color:rgba(0,0,0,1);
+    font-family: Arial, Helvetica, sans-serif;
 }  
 
 div#interface{
@@ -27,14 +28,19 @@ div#interface{
     padding: 10px; /*para separar o text da borda*/ 
 }
 
-h3{
-    color: #ced3d9;
-}
-
 p{
     text-align: justify;
     text-indent:50px;/*move a primeira linha do paragrafo*/
    
+}
+
+a{
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 /*HEADER********************************/
@@ -132,34 +138,92 @@ p{
     }
 /*END MENU****************************/
 
-/*SECTION  ********************/
+/*SEMATICA HTML*/
+/*SECTION/ASIDE/FOOTER **************/
+/*(com Divisao entre a Section/Aside/Footer *******/
 
+    /*SECTION-start*/
     section#corpo{
         display: block;
         width: 575px;
         float: left;
-        border-right: 1px solid black;
+        border-right: 1px solid black; /*linha que vai dividir section do aside*/
         padding-right: 15px;
         padding-left: 15px;
     }
 
+    header#header-artigo h1{
+        font-family:'FontLogo', sans-serif;
+        font-size: 20pt;
+        color: red;
+        margin-bottom: 0px;
+        margin-top: 0px;
+
+    }
+    article#noticia-principal header#header-artigo h2{
+        font-size: 13pt;
+        color: #cecece;
+        background-color: white;
+        margin: 0px;
+    }
+
+    header#header-artigo h3{
+        font-size: 12px;
+        color: #606060;
+
+    }
+
+    .direita{
+        text-align: right;
+    }
+
+    /*fomatando todos os <h2> do article*/
+    article#noticia-principal h2{
+        font-size: 16px;
+        color: #606060;
+        background-color: #dddddd;
+        padding: 5px 0px 5px 10px;
+        margin: 10px 0px 10px 0px ;
+    }
+
+    /*ASIDE-start*/
     aside#lateral{
         display: block;
         width: 364px;
         float: right;
         padding-right: 15px;
         padding-left: 15px;
+        background-color: #dddddd;
+        padding:10px ;
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     }
 
+    aside#lateral h1{
+        font-family:'FontLogo', sans-serif;
+        font-size: 20pt;
+        color: #606060;
+        margin-top: 0px;
+    }
+ 
+    aside#lateral h2{
+        background-color: #606060;
+        font-size: 13pt;
+        color: white;
+        padding: 5px;
+    }
+
+
+    /*FOOTER-start*/
     footer#footer{
         display: block;
-        clear: both;
-        border-top: 1px solid black;  
+        clear: both; /*clear e para limpar o floater colocar no section e aside*/
+        border-top: 1px solid black;  /*linha que vai dividir section e aside do ffoter*/
 
     }
 
     footer#footer p{
-        text-align: center;
+        text-align: center; 
     }
 
 
@@ -215,24 +279,54 @@ p{
 /*TABLE**********************************/
 
 
-    table {
-        width: 100%;
-        font-family: Arial, Helvetica, sans-serif;
-        border:grey;
+    table#tabelaspec {
+        border: 1px solid #606060; /* criar a tabela so a linha ao redor como um quadrado*/
+        border-spacing: 0px;/*vai tirar o espaco que foi criado na tabela*/
+
+        /*margin left/right vai deixar a tabela centralizada*/
+        margin-left: auto;
+        margin-right: auto;
+       
     }
 
-    tbody td {
-        background-color: #E1E1E1;
+    table#tabelaspec td {
+        border: 1px dashed red; /* criar a linhas dentro da tabela */
+        padding: 10px;/* mais espaco interno dentro da celula da tabela*/
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /*formatando cada coluna(celula - left/rigth)*/
+    table#tabelaspec td.coluna-esquerda{
+        background-color: #606060;
+        color: #ffffff;
         text-align: right;
+        vertical-align: top;
+        font-weight: bold;
+
     }
-    td, th {
-        padding: 1em;
+    table#tabelaspec td.coluna-direita{
+        background-color: #cecece;
+        text-align: left;
+    }
+
+    /*fomatanto o titulo da tabela*/
+    table#tabelaspec caption{
+        color: #888888;
+        font-size: 17.33px;
+        font-weight: bold;
+    }
+    
+    /*formatando o <span> que esta no titulo*/
+    table#tabelaspec caption span{
+        display: block;/*mostra como bloco flutuate, e vai se desconecta do testo*/
+        float: right;/* como o diplay in bloco vou dizer que vai flutuar a direita*/
+        color: black;
+        font-size: 10.66px ;
+        margin-top: 10px;/*vai fazer que o texto encoste na tabela movendo para baixo*/
     }
 
 
-    tfoot tr {
-        background-color: #333;
-        color: #fff;
-    }
+
 
 /*END TABLE*******************************/
