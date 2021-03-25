@@ -53,3 +53,17 @@ fieldset#mensagem{
 fieldset#pedido{
     background: url('../_imagens/icone-pagamento.png') no-repeat 95% 95%;
 }
+
+button#btn{
+    width: 128px;
+    height: 30px;
+    border-radius: 8px;
+    border-color: rgba(#888888);
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    float: right;
+    margin-right: 10px;
+
+}

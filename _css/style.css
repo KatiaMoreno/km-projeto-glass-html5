@@ -219,8 +219,15 @@ a:hover{
         display: block;
         clear: both; /*clear e para limpar o floater colocar no section e aside*/
         border-top: 1px solid black;  /*linha que vai dividir section e aside do ffoter*/
+        background-color: #606060;
+        color: #dddddd;
+        
+   }
 
-    }
+   footer img{
+       width: 40px;
+       height: 40px;
+   }
 
     footer#footer p{
         text-align: center; 
