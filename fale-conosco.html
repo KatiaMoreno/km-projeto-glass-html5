@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <link rel="stylesheet" href="_css/form.css">
     <link rel="stylesheet" type="text/css" href="_css/style.css">
     <title>fale conosco</title>
 </head>
@@ -60,30 +60,221 @@
                     <h3 class="direita">Atualizado em 1/Maio/2013</h3>
                 </header>
 
+                <form id="fcontato" method="POST" action="">
+                    <!--
+                        Method=GET ( e o metodo mais veloz, porem NAO SEGURO, os dados que escrevi vao ser enviados pata URL - sera visto na URL )
+                            
+                        Method=POST ( e o metodo mais "SEGURO", os dados serao enviados por pacotes dentro da solicitacao que voce fez ao site, e um pouco mas lentp)
+    
+                        action="" para que os dados sejam tratados de forma correta e ultilizar o action do lado do servido (php, javascript) usando um banco de dados
+                    -->
 
 
-                Identificação do Usuário
-                Nome:
-                Senha:
-                E-mail:
-                Sexo:
-                - Masculino
-                - Feminino
-                Data de Nascimento:
-                Endereço do Usuário
-                Logradouro:
-                Número:
-                Estado:
-                Cidade:
-                Mensagem do Usuário
-                Grau de Urgência:
-                Mensagem:
-                Quero um Google Glass
-                Gostaria de adquirir um Google Glass quando disponível
-                Cor:
-                Quantidade:
-                Preço Total: R$
-                [BOTÃO ENVIAR]
+                    <!--USUARIO - DADOS -->
+                    <fieldset id="usuario">
+                        <!--fieldset - significa conjuto de campos criar uma borda para separa cada campo do formulario-->
+                        <legend>Identificação do Usuário</legend>
+                        <!--legend - criar um titulo para a borda, na parte de cima
+                        label no nome, e por questoes semantica-->
+                        <p><label for="cName">Nome</label>:
+                            <!-- <input> vai fazer uma caixa de texto "retangular"
+                            name= e o nome do input
+                            size= e o tamanho da caixa 
+                            maxlength= quantos digitos posso digita na caixa
+                            placeholder= dica do que vai escrever dentro da caixa
+                            -->
+                            <input type="text" name="tName" id="cName" size="20" maxlength="30"
+                                placeholder="Nome Completo">
+                        </p>
+
+                        <p><label for="cSenha">Senha</label>:
+                            <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8"
+                                placeholder="8 digitos">
+
+                        </p>
+
+                        <p><label for="cEmail">E-mail:</label>
+                            <input type="email" name="tEmail" id="cEmail" size="20" maxlength="30"
+                                placeholder="Digite seu e-mail">
+                        </p>
+
+                        <fieldset id="sexo">
+                            <legend>Sexo:</legend>
+                            <!-- se fizemos um grupo de type=radio, todos tem que ter o mesmo name, para que seja escolhido apenas um na pagina pricipal
+                            label for="" : vai chamar o id do input (escrevemos o mesmo id do input dentro do for). Isso vai facilitar na hora de clicar, entao se clicamos no nome ela vai ser selecinado (entao pode ser clicado no nome ou na bolinha para ser selecionado)
+                            
+                            -->
+                            <input type="radio" name="tSexo" id="cMas"><label for="cMas">Masculino</label></input><br>
+                            <input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label></input>
+
+                        </fieldset>
+
+
+                        <p><label for="cNasc">Data de Nascimento:</label>
+                            <input type="date" name="tNasc" id="cNasc">
+                        </p>
+
+                    </fieldset>
+
+                    <!--USUARIO - ENDERECO -->
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        <p><label for="cRua">Logradouro:</label>
+
+                            <input type="text" name="tRua" id="cRua" size="13" maxlength="80"
+                                placeholder="Rua, Av, Trav .." />
+                        </p>
+
+                        <p><label for="cNum">Número:</label>
+                            <input type="number" name="tNum" id="cNum" min="0" max="9999">
+
+                        </p>
+                        <p><label for="cEst">Estado:</label>
+                            <select name="tEst" id="cEst">
+                                <!-- 
+                                <option> 
+                                value="AC" (e o que vai ser enviado para meu banco de dados, entao ser enviado "AC" referente a Acre) -->
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="EX">Estrangeiro</option>
+                            </select>
+                        </p>
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade">
+
+                        </p>
+
+                        <p>ou</p>
+
+                        <p><label for="cReg">Regiao por Estado:</label>
+                            <select name="tReg" id="cReg">
+                                <optgroup label="Regiao Norte">
+                                    <option value="AC">Acre</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="TO">Tocantins</option>
+                                </optgroup>
+
+                                <optgroup label="Regiao Nordeste">
+                                    <option value="AL">Alagoas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RN" selected>Rio Grande do Norte</option>
+                                    <option value="SE">Sergipe</option>
+
+                                </optgroup>
+
+                                <optgroup label="Regiao Centro-Oeste">
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                </optgroup>
+
+                                <optgroup label="Regiao Sudeste">
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="SP">São Paulo</option>
+                                </optgroup>
+
+                                <optgroup label="Regiao Sul">
+                                    <option value="PR">Paraná</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="SC">Santa Catarina</option>
+                                </optgroup>
+
+
+                                <optgroup label="Estrangeiro">
+                                    <option value="EX">Estrangeiro</option>
+                                </optgroup>
+
+                            </select>
+
+                            <!--
+                                no <input> colocamos o list="" (com o "id" do datalist)
+                                <datalist> ja vai dar uma opcao de lista, isso facilita para que o usuario nao digite o valor incorretor (para no caso de uma lista muito grande e necessrio usar Php ou Javascript)
+                            -->
+
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Sua Cidade"
+                                list="cidades"> <!-- -->
+                        </p>
+                        <datalist id="cidades">
+                            <option value="Natal"></option>
+                            <option value="Parnamirim"></option>
+                            <option value="Mossoro"></option>
+                            <option value="Caico"></option>
+                            <option value="Recife"></option>
+                        </datalist>
+
+                        </p>
+
+
+                    </fieldset>
+
+                    <!--MENSAGEM-->
+                    <fieldset id="mensagem">
+                        <legend>Mensagem do Usuário</legend>
+                        <p><label for="cUrg">Grau de Urgência:</label>
+                            <!--
+                                <input> type="range"(vai parmitir ter uma controle de importancia)
+                            -->
+                            Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="5">Max
+                        </p>
+                        <p><label for="cMsg"> Mensagem:</label>
+                            <textarea name="tMsg" id="cMsg" cols="30" rows="5"
+                                placeholder="Deixe aqui sua mensagem"></textarea>
+
+                        </p>
+
+                    </fieldset>
+
+                    <!--PEDIDOS -->
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                        <p><label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                        <p><label for="cCor">Cor:</label></p>
+                        <p><label for="cQtd">Quantidade:</label></p>
+                        <p><label for="cTtl">Preço Total: R$</label></p>
+                    </fieldset>
+
+                    <button type="reset" form="fcontato">LIMPAR </button>
+                    <button type="submit" form="fcontato"> ENVIAR</button>
+
+                </form>
         </section>
 
         <footer id="footer">
